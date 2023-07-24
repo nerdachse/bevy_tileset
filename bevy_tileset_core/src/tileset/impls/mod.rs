@@ -37,6 +37,15 @@ macro_rules! impl_tileset {
 			pub fn tile_size(&self) -> Vec2 {
 				self.tile_size
 			}
+			
+			/// Get the names of all tiles and their respective TileGroupId 
+			///
+			/// returns: impl Iterator<Item = (&TileGroupId, &String)>
+			///
+			pub fn get_tile_names(&self) -> impl Iterator<Item = (&TileGroupId, &String)> {
+			    self.tile_names.iter()
+
+			}
 
 			/// Get the name of a tile by its group ID
 			///
